@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<title>MMEMSS Registration</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: green;
+}
+
+fieldset {
+    width: 300px;
+}
+
+.menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.menu-btn {
+    font-size: 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: whitesmoke;
+    border: 2px solid black;
+}
+
+.dropdown a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+}
+
+#result {
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="menu">
+    <button class="menu-btn" onclick="toggleMenu()">⋮</button>
+    <div class="dropdown" id="menu">
+        <a href="Profile.html">Profile</a>
+        <a href="Settings.html">Settings</a>
+        <a href="logout.html">Logout</a>
+        <a href="exit.html">Exit</a>
+    </div>
+</div>
+
+<h1>USAJILI WA MWANAFUNZI</h1>
+
+<fieldset>
+<legend>JAZA TAARIFA ZA MWANAFUNZI</legend>
+
+<form action="re.html" method="POST" onsubmit="return validateForm()">
+
+<input type="text" id="name" name="name" placeholder="Jina" required><br><br>
+
+<input type="number" id="ageInput" name="age" placeholder="Umri" required oninput="checkAge()"><br>
+<p id="result"></p>
+
+<input type="date" name="date" required><br><br>
+
+<label>Jinsia</label><br>
+<input type="radio" name="gender" value="male" required> Mvulana
+<input type="radio" name="gender" value="female" required> Msichana
+<br><br>
+
+<input type="email" id="email" name="email" placeholder="mfano@gmail.com"><br><br>
+
+<input type="tel" id="phone" name="phone" placeholder="07xxxxxxxx"><br><br>
+
+<button type="submit">TUMA</button>
+
+</form>
+</fieldset>
+
+<script>
+// Toggle menu
+function toggleMenu() {
+    let menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+// Close menu when clicking outside
+document.addEventListener("click", function(e) {
+    let menu = document.getElementById("menu");
+    let btn = document.querySelector(".menu-btn");
+
+    if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.style.display = "none";
+    }
+});
+
+// Age check
+function checkAge() {
+    let age = document.getElementById("ageInput").value;
+    let result = document.getElementById("result");
+
+    if (age < 11 || age > 100) {
+        result.textContent = "Umri si sahihi";
+        result.style.color = "red";
+    } else if (age < 22) {
+        result.textContent = "Unaruhusiwa kujiandikisha";
+        result.style.color = "green";
+    } else {
+        result.textContent = "Hauruhusiwi (Mtu mzima)";
+        result.style.color = "red";
+    }
+}
+
+// Form validation
+function validateForm() {
+    let age = document.getElementById("ageInput").value;
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+
+    // Age restriction
+    if (age >= 22 || age < 11) {
+        alert("Hauruhusiwi kutokana na umri!");
+        return false;
+    }
+
+    // Require at least one contact
+    if (email === "" && phone === "") {
+        alert("Weka barua pepe au namba ya simu!");
+        return false;
+    }
+
+    // Simple phone validation (Tanzania format)
+    if (phone !== "" && !/^0[67]\d{8}$/.test(phone)) {
+        alert("Namba ya simu si sahihi!");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</body>
+</html>

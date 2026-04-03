@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile ya Mwanafunzi</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .profile-card {
+            background: white;
+            width: 320px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        h2 {
+            margin: 10px 0;
+            color: green;
+        }
+
+        .info {
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .info p {
+            margin: 8px 0;
+        }
+
+        .btn {
+            margin-top: 15px;
+            padding: 10px;
+            border: none;
+            background: green;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="profile-card">
+    <img src="chat.png" alt="Profile">
+
+    <h2 id="pname">Jina</h2>
+
+    <div class="info">
+        <p><strong>Umri:</strong> <span id="page"></span></p>
+        <p><strong>Jinsia:</strong> <span id="pgender"></span></p>
+        <p><strong>Email:</strong> <span id="pemail"></span></p>
+        <p><strong>Simu:</strong> <span id="pphone"></span></p>
+    </div>
+
+    <button class="btn" onclick="goBack1()">Rudi settings</button>
+    <button class="btn" onclick="goBack2()">Rudi usajili</button>
+</div>
+
+<script>
+    // LOAD DATA FROM LOCAL STORAGE
+    document.getElementById("pname").textContent = localStorage.getItem("name");
+    document.getElementById("page").textContent = localStorage.getItem("age");
+    document.getElementById("pgender").textContent = localStorage.getItem("gender");
+    document.getElementById("pemail").textContent = localStorage.getItem("email");
+    document.getElementById("pphone").textContent = localStorage.getItem("phone");
+
+            function goBack1() {
+                window.location.href = "settings.html";
+            }
+
+            function goBack2() {
+                window.location.href = "pag2.html";
+            }
+
+</script>
+
+</body>
+</html>

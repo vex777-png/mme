@@ -1,0 +1,53 @@
+body {
+    place-items: center;
+    background-color: green;
+
+}
+
+fieldset {
+    color: black;
+    background-color: #f5f5f5;
+    width: 700px;
+    margin: 0 auto;
+    place-items: center;
+    border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+button{
+    place-items: center;
+    width: 100%;
+    padding: 10px;
+    background: green;
+    color: white;
+    border: none;
+}
+.menu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+
+        }
+
+        .menu-btn {
+            font-size: 25px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: black;
+            
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: whitesmoke;
+            border: 2px solid black;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            color: black;
+        }

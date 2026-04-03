@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="sw">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+    <link rel="stylesheet" href="stylel.css">
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+        }
+        body {  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+
+        button1 {
+            padding: 10px 20px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button2 {
+            padding: 10px 20px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+
+<body>
+<fieldset>
+<h2>Unataka kutoka?</h2><br>
+
+<button1 onclick="logout1()">Logout</button1>
+
+<button2 onclick="logout2()">hapana</button2>
+
+</fieldset>
+<script>
+    function logout1() {
+        // CLEAR DATA
+        localStorage.clear();
+
+        alert("Umetoka kikamilifu!");
+
+        // RETURN TO FORM PAGE
+        window.location.href = "index.html";
+    }
+    function logout2() {
+
+        alert("umehairisha");
+
+
+        // RETURN TO FORM PAGE
+        window.location.href = "pag2.html";
+    }
+</script>
+
+</body>
+</html>

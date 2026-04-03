@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            width: 320px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: green;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Badili Taarifa</h2>
+
+    <input type="text" id="name" placeholder="Jina">
+    <input type="number" id="age" placeholder="Umri">
+    <input type="email" id="email" placeholder="Email">
+    <input type="tel" id="phone" placeholder="Simu">
+
+    <button onclick="saveChanges()">Hifadhi</button>
+</div>
+
+<script>
+    // LOAD OLD DATA
+    document.getElementById("name").value = localStorage.getItem("name") || "";
+    document.getElementById("age").value = localStorage.getItem("age") || "";
+    document.getElementById("email").value = localStorage.getItem("email") || "";
+    document.getElementById("phone").value = localStorage.getItem("phone") || "";
+
+    function saveChanges() {
+        localStorage.setItem("name", document.getElementById("name").value);
+        localStorage.setItem("age", document.getElementById("age").value);
+        localStorage.setItem("email", document.getElementById("email").value);
+        localStorage.setItem("phone", document.getElementById("phone").value);
+
+        alert("Taarifa zimehifadhiwa!");
+        window.location.href = "Profile.html";
+    }
+</script>
+
+</body>
+</html>

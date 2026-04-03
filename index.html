@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style2.css">
+
+<div class="menu">
+    <button class="menu-btn" onclick="toggleMenu()">⋮</button>
+    <div class="dropdown" id="menu">
+        <a href="exit.html">Exit</a>
+        
+    </div>
+</div>
+<script>
+function toggleMenu() {
+    let menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>School Rules</title>
+</head>
+<fieldset>
+<body>
+
+    <h2>Kanuni za Shule</h2>
+
+    <ol>
+        <li><strong>Mahudhurio na Muda</strong>
+            <ul>
+                <li>Wanafunzi wanapaswa kufika shuleni na kwenye mkusanyiko kwa wakati.</li>
+                <li>Ni lazima wahudhurie masomo yote mara kwa mara.</li>
+                <li>Ruhusa inahitajika ili kuondoka shuleni mapema.</li>
+            </ul>
+        </li>
+
+        <li><strong>Sare na Mwonekano</strong>
+            <ul>
+                <li>Wanafunzi wanapaswa kuvaa sare rasmi ya shule kila siku.</li>
+                <li>Viwango vya usafi (kama nywele na kucha) lazima vifuatwe.</li>
+                <li>Vipodozi na mapambo yasiyoidhinishwa haviruhusiwi.</li>
+            </ul>
+        </li>
+
+        <li><strong>Nidhamu na Tabia</strong>
+            <ul>
+                <li>Wanafunzi wanapaswa kuwaheshimu walimu, wafanyakazi, viongozi wa wanafunzi, na wenzao.</li>
+                <li>Lugha chafu au tabia isiyo na heshima hairuhusiwi.</li>
+                <li>Uonevu, ugomvi, au tabia hatarishi zimepigwa marufuku kabisa.</li>
+                <li>hairuhusiwi kwa mwanafunzi kuharibu kwa makusudi mali za shule</li>
+
+            </ul>
+        </li>
+
+        <li><strong>Mali, Simu na Vifaa vya Kielektroniki</strong>
+            <ul>
+                <li>Simu za mkononi na vifaa vya kielektroniki kwa kawaida haviruhusiwi.</li>
+                <li>Vifaa vitakavyokamatwa vinaweza kurejeshwa mwishoni mwa siku au muhula.</li>
+            </ul>
+        </li>
+
+        <li><strong>Shughuli za Shule</strong>
+            <ul>
+                <li>Wanafunzi wanapaswa kushiriki katika mikusanyiko, michezo, na vilabu.</li>
+                <li>Mazingira ya kielimu yanapaswa kuheshimiwa wakati wote.</li>
+            </ul>
+        </li>
+
+        <li><strong>Usalama na Kanuni za Mwendo</strong>
+            <ul>
+                <li>Ruhusa inahitajika ili kutoka nje ya eneo la shule.</li>
+                <li>Sheria za usalama lazima zifuatwe, hasa wakati wa kutumia usafiri wa shule.</li>
+            </ul>
+        </li>
+        <li><strong>mambo yanayoweza kukusababisha kufukuzwa shule</strong></li>
+        <ul>
+            <li>wizi</li>
+            <li>uasherati</li>
+            <li>uvutaji bangi</li>
+            <li>ushoga</li>
+            <li>ubakaji</li>
+
+        </ul>
+    </ol>
+    <form action="pag2.html">
+        <input type="checkbox" placeholder="tick" required>kubali kufuata sheria na kanuni za shule<br>
+        <button type="submit">Ukurasa mwingine</button>
+    </form>
+</fieldset>
+</html>
+</body>
+
+</html>
